@@ -248,3 +248,56 @@ Cuando usas HTTPS (HTTP sobre SSL/TLS):
     Autenticación del servidor: Verifica que te estás comunicando con el servidor web legítimo y no con un impostor. Esto se hace a través de los certificados SSL/TLS emitidos por Autoridades de Certificación (CA) de confianza.
 
 Para los desarrolladores web, usar HTTPS es un estándar de la industria no solo por seguridad, sino también por el SEO (los motores de búsqueda favorecen los sitios HTTPS) y las nuevas funcionalidades del navegador que requieren un contexto seguro (como la geolocalización o las Service Workers).
+
+FR
+9. 🛠️ Herramientas básicas para ver el protocolo en acción
+Como desarrollador, es útil conocer algunas herramientas de línea de comandos para diagnosticar problemas de red y ver cómo interactúan los protocolos.
+
+ping: Envía paquetes ICMP a una dirección IP o nombre de host para verificar la conectividad y medir el tiempo de respuesta. Útil para saber si un host está en línea.
+
+Ejemplo: ping google.com
+
+tracert (Windows) / traceroute (Linux/macOS): Muestra la ruta que toma un paquete para llegar a su destino, mostrando cada "salto" (router) en el camino y el tiempo que tarda en cada uno.
+
+Ejemplo: tracert google.com
+
+netstat: Muestra estadísticas de la red, conexiones activas, tablas de enrutamiento y puertos escuchando. Útil para ver qué puertos están abiertos en tu máquina.
+
+Ejemplo: netstat -ano (Windows, muestra el PID del proceso) o netstat -tuln (Linux, puertos TCP/UDP escuchando).
+
+nslookup: Consulta servidores DNS para obtener nombres de dominio o direcciones IP. Útil para verificar la resolución DNS.
+
+Ejemplo: nslookup google.com
+
+curl: Una herramienta de línea de comandos para transferir datos con sintaxis URL. Soporta varios protocolos (HTTP, HTTPS, FTP, etc.). Excelente para probar APIs web.
+
+Ejemplo: curl https://api.github.com/users/octocat
+
+telnet: Un protocolo y programa para la comunicación remota en modo texto. Aunque su uso ha disminuido por razones de seguridad (no cifra el tráfico), puede ser útil para probar la conectividad a un puerto específico en un servidor.
+
+Ejemplo: telnet example.com 80 (intentar conectarse al puerto 80 de example.com)
+
+10. 📖 Glosario esencial de términos
+Aquí tienes una lista de términos clave que te ayudarán a entender mejor el mundo de las redes y TCP/IP:
+
+IP (Internet Protocol): El protocolo principal en la capa de Internet que maneja el direccionamiento y enrutamiento de paquetes.
+
+DNS (Domain Name System): El sistema que traduce nombres de dominio legibles a direcciones IP.
+
+Gateway: Un dispositivo (generalmente un enrutador) que actúa como un punto de acceso entre dos redes diferentes, permitiendo que los datos fluyan entre ellas. Tu enrutador doméstico es tu gateway predeterminado.
+
+NAT (Network Address Translation): Un método que permite a múltiples dispositivos en una red privada compartir una única dirección IP pública para acceder a Internet, conservando así las direcciones IP.
+
+Subred (Subnet): Una división lógica de una red IP en segmentos más pequeños. Ayuda a organizar y gestionar redes grandes.
+
+Paquete (Packet): La unidad fundamental de datos que se transmite a través de una red IP. Los datos se dividen en paquetes para su envío.
+
+Router (Enrutador): Un dispositivo de red que reenvía paquetes de datos entre redes de computadoras. Toma decisiones de enrutamiento basadas en las direcciones IP.
+
+Switch (Conmutador): Un dispositivo de red que conecta segmentos de red y reenvía el tráfico solo a los puertos donde se encuentran los dispositivos de destino, mejorando la eficiencia de la red local.
+
+Firewall (Cortafuegos): Un sistema de seguridad de red que monitorea y controla el tráfico de red entrante y saliente basándose en reglas de seguridad preestablecidas.
+
+Ancho de banda (Bandwidth): La capacidad máxima de transferencia de datos de una conexión de red o una ruta. Se mide en bits por segundo (bps).
+
+Latencia (Latency): El tiempo que tarda un paquete de datos en viajar de un punto a otro en una red. Una latencia baja es deseable para una comunicación rápida.
