@@ -30,51 +30,19 @@ Su rol en el funcionamiento de Internet TCP/IP es la columna vertebral de Intern
 🤝 Modelo TCP/IP vs Modelo OSI Para entender cómo funcionan las redes, a menudo se utilizan modelos conceptuales. Los dos más conocidos son el Modelo TCP/IP y el Modelo OSI (Interconexión de Sistemas Abiertos).
 Comparación de capas Mientras que el Modelo OSI tiene siete capas distintas, el Modelo TCP/IP simplifica esto en cuatro capas principales.
 
-Capa del Modelo OSI
+Cada capa del modelo TCP/IP tiene una responsabilidad específica en el proceso de comunicación. Piensa en ellas como diferentes departamentos en una empresa, cada uno con una tarea única pero interdependiente.
 
-Capa del Modelo TCP/IP
+1. Capa de Acceso a Red
+Esta es la capa inferior y se encarga de la interacción directa con el hardware de red. Define cómo los datos son enviados físicamente a través de un medio de red (cables, ondas de radio, etc.). Aquí es donde operan estándares como Ethernet y Wi-Fi. También incluye los drivers de la tarjeta de red que permiten al sistema operativo comunicarse con el hardware.
 
-Descripción Simplificada
+2. Capa de Internet
+También conocida como Capa de Red. Su función principal es el enrutamiento de paquetes de datos a través de diferentes redes. Aquí es donde el Protocolo de Internet (IP) es fundamental. Define cómo se direccionan los paquetes y cómo se enrutan de un origen a un destino, utilizando las direcciones IP de los dispositivos. Los enrutadores operan en esta capa para dirigir el tráfico.
 
-Aplicación
+3. Capa de Transporte
+Esta capa es responsable de la comunicación de extremo a extremo entre procesos que se ejecutan en diferentes hosts. Sus dos protocolos principales son TCP (Transmission Control Protocol) y UDP (User Datagram Protocol). TCP proporciona una comunicación fiable y ordenada (como para la navegación web), mientras que UDP ofrece una comunicación más rápida pero sin garantías de entrega (como para el streaming de video).
 
-Aplicación
-
-Proporciona servicios de red a las aplicaciones de usuario.
-
-Presentación
-(No tiene equivalente directo)
-
-Gestiona la representación de los datos (ej. cifrado/descifrado).
-
-Sesión
-(No tiene equivalente directo)
-
-Establece, gestiona y finaliza las sesiones de comunicación.
-
-Transporte
-
-Transporte
-
-Asegura la entrega de datos de extremo a extremo.
-
-Red
-
-Internet
-
-Direccionamiento y enrutamiento de paquetes.
-
-Enlace de Datos
-
-Acceso a Red
-
-Transfiere datos entre nodos adyacentes.
-
-Física
-
-Acceso a Red
-
-Define las especificaciones eléctricas y mecánicas del medio.
+4. Capa de Aplicación
+Esta es la capa más cercana al usuario. Aquí residen los protocolos que las aplicaciones utilizan para comunicarse a través de la red. Cuando abres un navegador web, envías un correo electrónico o resuelves un nombre de dominio, la Capa de Aplicación entra en juego con protocolos como HTTP, HTTPS, DNS, FTP, y SMTP.
 
 ¿Por qué usamos TCP/IP en la web? Aunque el modelo OSI es una excelente herramienta conceptual y pedagógica, el modelo TCP/IP es el que se implementa y utiliza en la práctica en Internet. Su diseño es más robusto y flexible para las complejidades del enrutamiento de paquetes a través de diversas redes interconectadas, lo que lo hace ideal para la infraestructura de la web.
 
