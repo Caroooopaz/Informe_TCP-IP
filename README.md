@@ -175,3 +175,76 @@ UDP (User Datagram Protocol):
 💨 Más rápido, pero puede perder datos.
 
 Ejemplos: 📺 Streaming de video/audio, juegos en línea. ¡Prefieres ver el video con un pequeño glitch que esperar a que cargue!
+
+7. 🔄 Proceso básico de conexión en la web
+
+Entender el flujo de datos desde tu navegador hasta un servidor web ilustra cómo interactúan todos estos protocolos.
+
+De tu navegador a un servidor web: ¿qué ocurre paso a paso?
+
+    Ingreso de la URL: Escribes www.ejemplo.com en tu navegador y presionas Enter.
+
+    Resolución DNS: Tu navegador primero necesita saber la dirección IP de www.ejemplo.com. Le pregunta a un servidor DNS local (a menudo tu enrutador, que a su vez pregunta a otros servidores DNS si no tiene la información).
+
+    Obtención de la IP: El servidor DNS le responde a tu navegador con la dirección IP del servidor web de ejemplo.com (ej. 192.0.2.1).
+
+    Establecimiento de conexión TCP (Handshake): Tu navegador ahora sabe la IP del servidor. Para establecer una comunicación fiable, inicia un "three-way handshake" TCP con el servidor:
+
+        SYN (Synchronize): Tu navegador envía un paquete SYN al servidor, indicando que quiere establecer una conexión.
+
+        SYN-ACK (Synchronize-Acknowledge): El servidor recibe el SYN y responde con un SYN-ACK, confirmando que está listo para la conexión.
+
+        ACK (Acknowledge): Tu navegador recibe el SYN-ACK y envía un ACK final, confirmando el establecimiento de la conexión.
+
+    Solicitud HTTP/HTTPS: Una vez establecida la conexión TCP, tu navegador envía una solicitud HTTP (GET /) al servidor para pedir la página web principal.
+
+    Respuesta del servidor: El servidor recibe la solicitud, procesa la petición y envía la página web solicitada (código HTML, CSS, JavaScript, imágenes) de vuelta a tu navegador a través de la conexión TCP.
+
+    Renderizado de la página: Tu navegador recibe los datos y los ensambla para mostrar la página web en tu pantalla.
+
+Resolución DNS
+
+Este es un paso crítico. Cuando tu navegador necesita la IP de un dominio:
+
+    Primero, busca en su caché local DNS.
+
+    Si no la encuentra, pregunta al servidor DNS configurado en tu sistema operativo (a menudo tu enrutador).
+
+    Tu enrutador, si no tiene la entrada en su caché, puede preguntar a los servidores DNS de tu proveedor de servicios de Internet (ISP).
+
+    Si los ISP tampoco tienen la información, la consulta escala a los servidores raíz DNS, quienes dirigen la consulta a los servidores DNS de nivel superior (TLD, como .com, .org).
+
+    Finalmente, la consulta llega al servidor DNS autorizado para ejemplo.com, que devuelve la dirección IP correcta. Esta IP se almacena en caché en los distintos niveles para futuras solicitudes.
+
+Establecimiento de conexión TCP (Handshake)
+
+El "three-way handshake" de TCP es fundamental para la fiabilidad:
+
+    Paso 1 (SYN): El cliente envía un segmento SYN para iniciar la conexión.
+
+    Paso 2 (SYN-ACK): El servidor recibe el SYN y responde con un segmento SYN-ACK para reconocer la solicitud e indicar su propia solicitud de conexión.
+
+    Paso 3 (ACK): El cliente recibe el SYN-ACK y responde con un segmento ACK final, completando el handshake y estableciendo la conexión.
+    Una vez establecida, los datos pueden fluir en ambas direcciones.
+
+8. 🔒 Seguridad y capa de transporte
+
+La seguridad en la web es primordial, y gran parte de ella se maneja en la capa de transporte a través de protocolos como SSL/TLS.
+
+Introducción rápida a SSL/TLS
+
+    SSL (Secure Sockets Layer) y su sucesor TLS (Transport Layer Security) son protocolos criptográficos que proporcionan seguridad de las comunicaciones a través de una red de computadoras. Su principal función es establecer un canal de comunicación seguro entre un cliente (ej. navegador) y un servidor (ej. servidor web).
+
+    Trabajan sobre TCP, encriptando los datos que se envían y recibiendo, y autenticando la identidad del servidor (y opcionalmente del cliente) utilizando certificados digitales.
+
+Qué cambia cuando usamos HTTPS
+
+Cuando usas HTTPS (HTTP sobre SSL/TLS):
+
+    Cifrado de datos: Toda la comunicación entre tu navegador y el servidor está cifrada. Esto significa que si alguien intercepta los datos, no podrá leerlos.
+
+    Integridad de los datos: Asegura que los datos no han sido modificados o corrompidos durante la transmisión.
+
+    Autenticación del servidor: Verifica que te estás comunicando con el servidor web legítimo y no con un impostor. Esto se hace a través de los certificados SSL/TLS emitidos por Autoridades de Certificación (CA) de confianza.
+
+Para los desarrolladores web, usar HTTPS es un estándar de la industria no solo por seguridad, sino también por el SEO (los motores de búsqueda favorecen los sitios HTTPS) y las nuevas funcionalidades del navegador que requieren un contexto seguro (como la geolocalización o las Service Workers).
