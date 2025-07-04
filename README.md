@@ -133,3 +133,45 @@ Existen dos versiones principales de direcciones IP:
   - 10.x.x.x
   - 172.16.x.x a 172.31.x.x
 - Tu enrutador utiliza NAT (Network Address Translation) para permitir que múltiples dispositivos con IPs privadas compartan una única IP pública para acceder a Internet
+
+5. 🌐 Puertos y Protocolos Comunes para Desarrolladores Web
+¿Qué es un puerto? 🚪
+Es como el número de apartamento en una dirección IP. Permite que distintas apps en tu computadora reciban el tráfico correcto.
+
+Puertos Típicos:
+80 (HTTP): 🌍 El puerto para la web no segura.
+
+443 (HTTPS): 🔒 El puerto para la web segura (cifrado). ¡Esencial para tu privacidad!
+
+22 (SSH): 💻 Control remoto seguro de servidores.
+
+3306 (MySQL): 🗄️ Para conectar a bases de datos MySQL.
+
+6. 🔗 Protocolos Clave en el Día a Día Web
+HTTP/HTTPS
+HTTP: 🗣️ Reglas para que navegadores y servidores "hablen". ¡No es seguro!
+
+HTTPS: 🛡️ HTTP seguro con cifrado (SSL/TLS). ¡Imprescindible para proteger tus datos!
+
+DNS (Domain Name System) 📞
+Es la "guía telefónica" de Internet. Traduce nombres de dominio (google.com) a direcciones IP (172.217.160.142) para que tu navegador sepa dónde ir.
+
+DHCP (Dynamic Host Configuration Protocol) 🏠
+Asigna automáticamente direcciones IP a los dispositivos en tu red. ¡Así no tienes que configurarlas manualmente!
+
+TCP vs UDP
+TCP (Transmission Control Protocol):
+
+🤝 Confiable: Asegura que todos los datos lleguen, en orden y sin errores.
+
+🐌 Más lento, pero robusto.
+
+Ejemplos: 📝 Navegación web (HTTP/HTTPS), descarga de archivos, email. ¡No quieres que te falten partes de tu página o archivo!
+
+UDP (User Datagram Protocol):
+
+🚀 Rápido: Envía datos sin verificar si llegaron. "Dispara y olvida".
+
+💨 Más rápido, pero puede perder datos.
+
+Ejemplos: 📺 Streaming de video/audio, juegos en línea. ¡Prefieres ver el video con un pequeño glitch que esperar a que cargue!
