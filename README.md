@@ -22,12 +22,16 @@ Conceptos Básicos del Protocolo TCP/IP Este documento forma parte del módulo i
 
 📖 Glosario esencial de términos
 
-💡 ¿Qué es el protocolo TCP/IP y por qué es importante? El Protocolo de Control de Transmisión/Protocolo de Internet (TCP/IP) no es un protocolo único, sino un conjunto de protocolos de comunicación que permite a los dispositivos de una red comunicarse entre sí. Es, en esencia, el lenguaje fundamental que usa Internet para que los datos viajen de un punto a otro.
+## 1.💡 ¿Qué es el protocolo TCP/IP y por qué es importante?
+
+El Protocolo de Control de Transmisión/Protocolo de Internet (TCP/IP) no es un protocolo único, sino un conjunto de protocolos de comunicación que permite a los dispositivos de una red comunicarse entre sí. Es, en esencia, el lenguaje fundamental que usa Internet para que los datos viajen de un punto a otro.
 Breve historia y propósito Desarrollado en la década de 1970 por el Departamento de Defensa de los Estados Unidos, su propósito inicial era crear una red robusta y tolerante a fallos que pudiera funcionar incluso si partes de ella fueran destruidas. Con el tiempo, se convirtió en el estándar global para las comunicaciones de red, impulsando el crecimiento exponencial de Internet.
 
 Su rol en el funcionamiento de Internet TCP/IP es la columna vertebral de Internet. Cada vez que envías un correo electrónico, visitas un sitio web, reproduces un video en streaming o realizas una videollamada, estás utilizando la suite de protocolos TCP/IP. Permite que la información se divida en pequeños paquetes, se envíe por diferentes rutas y se reensamble correctamente en su destino, garantizando la fiabilidad de la comunicación a escala global.
 
-🤝 Modelo TCP/IP vs Modelo OSI Para entender cómo funcionan las redes, a menudo se utilizan modelos conceptuales. Los dos más conocidos son el Modelo TCP/IP y el Modelo OSI (Interconexión de Sistemas Abiertos).
+## 2.🤝 Modelo TCP/IP vs Modelo OSI 
+
+Para entender cómo funcionan las redes, a menudo se utilizan modelos conceptuales. Los dos más conocidos son el Modelo TCP/IP y el Modelo OSI (Interconexión de Sistemas Abiertos).
 Comparación de capas Mientras que el Modelo OSI tiene siete capas distintas, el Modelo TCP/IP simplifica esto en cuatro capas principales.
 
 Cada capa del modelo TCP/IP tiene una responsabilidad específica en el proceso de comunicación. Piensa en ellas como diferentes departamentos en una empresa, cada uno con una tarea única pero interdependiente.
@@ -134,7 +138,7 @@ Existen dos versiones principales de direcciones IP:
   - 172.16.x.x a 172.31.x.x
 - Tu enrutador utiliza NAT (Network Address Translation) para permitir que múltiples dispositivos con IPs privadas compartan una única IP pública para acceder a Internet
 
-5. 🌐 Puertos y Protocolos Comunes para Desarrolladores Web
+## 5. 🌐 Puertos y Protocolos Comunes para Desarrolladores Web
 ¿Qué es un puerto? 🚪
 Es como el número de apartamento en una dirección IP. Permite que distintas apps en tu computadora reciban el tráfico correcto.
 
@@ -147,7 +151,7 @@ Puertos Típicos:
 
 3306 (MySQL): 🗄️ Para conectar a bases de datos MySQL.
 
-6. 🔗 Protocolos Clave en el Día a Día Web
+## 6. 🔗 Protocolos Clave en el Día a Día Web
 HTTP/HTTPS
 HTTP: 🗣️ Reglas para que navegadores y servidores "hablen". ¡No es seguro!
 
@@ -176,7 +180,7 @@ UDP (User Datagram Protocol):
 
 Ejemplos: 📺 Streaming de video/audio, juegos en línea. ¡Prefieres ver el video con un pequeño glitch que esperar a que cargue!
 
-7. 🔄 Proceso básico de conexión en la web
+## 7. 🔄 Proceso básico de conexión en la web
 
 Entender el flujo de datos desde tu navegador hasta un servidor web ilustra cómo interactúan todos estos protocolos.
 
@@ -227,7 +231,7 @@ El "three-way handshake" de TCP es fundamental para la fiabilidad:
     Paso 3 (ACK): El cliente recibe el SYN-ACK y responde con un segmento ACK final, completando el handshake y estableciendo la conexión.
     Una vez establecida, los datos pueden fluir en ambas direcciones.
 
-8. 🔒 Seguridad y capa de transporte
+## 8. 🔒 Seguridad y capa de transporte
 
 La seguridad en la web es primordial, y gran parte de ella se maneja en la capa de transporte a través de protocolos como SSL/TLS.
 
@@ -249,8 +253,8 @@ Cuando usas HTTPS (HTTP sobre SSL/TLS):
 
 Para los desarrolladores web, usar HTTPS es un estándar de la industria no solo por seguridad, sino también por el SEO (los motores de búsqueda favorecen los sitios HTTPS) y las nuevas funcionalidades del navegador que requieren un contexto seguro (como la geolocalización o las Service Workers).
 
-FR
-9. 🛠️ Herramientas básicas para ver el protocolo en acción
+
+## 9. 🛠️ Herramientas básicas para ver el protocolo en acción
 Como desarrollador, es útil conocer algunas herramientas de línea de comandos para diagnosticar problemas de red y ver cómo interactúan los protocolos.
 
 ping: Envía paquetes ICMP a una dirección IP o nombre de host para verificar la conectividad y medir el tiempo de respuesta. Útil para saber si un host está en línea.
@@ -277,7 +281,7 @@ telnet: Un protocolo y programa para la comunicación remota en modo texto. Aunq
 
 Ejemplo: telnet example.com 80 (intentar conectarse al puerto 80 de example.com)
 
-10. 📖 Glosario esencial de términos
+## 10. 📖 Glosario esencial de términos
 Aquí tienes una lista de términos clave que te ayudarán a entender mejor el mundo de las redes y TCP/IP:
 
 IP (Internet Protocol): El protocolo principal en la capa de Internet que maneja el direccionamiento y enrutamiento de paquetes.
